@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 const navItems = [
   {
@@ -42,7 +42,7 @@ const navItems = [
 
 export default function Topbar({ onMenuToggle }) {
   return (
-    <header className="h-[68px] bg-white border-b border-gray-100 flex items-center justify-between px-6 lg:px-10 sticky top-0 z-30">
+    <header className="h-[68px] bg-white border-b-0 flex items-center justify-between px-6 lg:px-10 sticky top-0 z-30">
       {/* Left: Logo + Nav */}
       <div className="flex items-center gap-8">
         {/* Mobile menu button */}
@@ -56,15 +56,15 @@ export default function Topbar({ onMenuToggle }) {
           </svg>
         </button>
 
-        {/* Logo */}
-        <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-lg bg-primary-500 flex items-center justify-center">
+        {/* Logo - Clickable */}
+        <Link to="/landing" className="flex items-center gap-2.5 cursor-pointer hover:opacity-80 transition-opacity">
+          <div className="w-8 h-8 rounded-lg bg-primary-500 flex items-center justify-center hover:bg-primary-600 transition-colors">
             <svg className="w-[18px] h-[18px] text-white" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
             </svg>
           </div>
-          <span className="text-[17px] font-bold text-gray-900 tracking-tight hidden sm:block">SmartGuard</span>
-        </div>
+          <span className="text-[18px] font-bold text-gray-900 tracking-tight hidden sm:block">SmartGuard</span>
+        </Link>
 
         {/* Navigation */}
         <nav className="hidden lg:flex items-center gap-1">

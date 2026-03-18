@@ -102,7 +102,7 @@ export default function Analyzer() {
       </div>
 
       {/* Main card */}
-      <div className="bg-white border border-gray-200/80 rounded-2xl p-6 space-y-5">
+      <div className="border-0 rounded-0 p-0 space-y-5">
         {/* Contract name */}
         <div>
           <label className="block text-[13px] font-semibold text-gray-700 mb-1.5" htmlFor="contract-name">
