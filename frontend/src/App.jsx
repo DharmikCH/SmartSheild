@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
+import Landing from './pages/Landing';
 import Dashboard from './pages/Dashboard';
 import Analyzer from './pages/Analyzer';
 import Report from './pages/Report';
@@ -9,6 +10,7 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/landing" element={<Landing />} />
         <Route element={<Layout />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/analyzer" element={<Analyzer />} />

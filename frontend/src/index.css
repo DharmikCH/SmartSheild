@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap');
 
 * {
   margin: 0;
@@ -12,12 +13,16 @@
 
 body {
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  background-color: #f8f9fb;
+  background-color: #f9fafb;
   color: #111827;
   font-size: 14px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
 }
 
 /* Scrollbar */
@@ -35,13 +40,15 @@ body {
   background: #9ca3af;
 }
 
-/* Card hover */
+/* Card hover - sleek minimal effect */
 .card-hover {
-  transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-color: rgba(45, 95, 79, 0.1);
 }
 .card-hover:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  border-color: rgba(45, 95, 79, 0.2);
 }
 
 /* Risk badges */

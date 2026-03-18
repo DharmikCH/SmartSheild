@@ -26,8 +26,8 @@ export default function Dashboard() {
     <div className="space-y-7">
       {/* Page header */}
       <div>
-        <h1 className="text-[26px] font-bold text-gray-900 tracking-tight">Dashboard</h1>
-        <p className="text-[13px] text-gray-500 mt-1">
+        <h1 className="text-[32px] font-bold text-gray-900 tracking-tight" style={{ fontFamily: "'Playfair Display', serif" }}>Dashboard</h1>
+        <p className="text-[13px] text-gray-500 mt-2">
           Monitor your smart contract security posture at a glance.
         </p>
       </div>
@@ -35,21 +35,21 @@ export default function Dashboard() {
       {/* Stat cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Primary - Total Analyzed */}
-        <div className="card-hover bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl p-5 text-white">
+        <div className="card-hover bg-primary-600 rounded-2xl p-5 text-white border border-primary-500">
           <div className="flex items-center justify-between mb-4">
-            <span className="text-[13px] font-semibold text-white/80">Total Contracts</span>
-            <div className="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center">
+            <span className="text-[13px] font-semibold text-white/85">Total Contracts</span>
+            <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center">
               <svg className="w-[18px] h-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
             </div>
           </div>
           <p className="text-[32px] font-extrabold leading-none">{stats.total}</p>
-          <p className="text-[11px] text-white/60 mt-1.5">Contracts scanned</p>
+          <p className="text-[11px] text-white/70 mt-1.5">Contracts scanned</p>
         </div>
 
         {/* High Risk */}
-        <div className="card-hover bg-white border border-gray-200/80 rounded-2xl p-5">
+        <div className="card-hover bg-white border border-gray-100 rounded-2xl p-5 hover:border-red-200">
           <div className="flex items-center justify-between mb-4">
             <span className="text-[13px] font-semibold text-gray-500">High Risk</span>
             <div className="w-9 h-9 rounded-xl bg-red-50 flex items-center justify-center">
@@ -63,7 +63,7 @@ export default function Dashboard() {
         </div>
 
         {/* Medium Risk */}
-        <div className="card-hover bg-white border border-gray-200/80 rounded-2xl p-5">
+        <div className="card-hover bg-white border border-gray-100 rounded-2xl p-5 hover:border-amber-200">
           <div className="flex items-center justify-between mb-4">
             <span className="text-[13px] font-semibold text-gray-500">Medium Risk</span>
             <div className="w-9 h-9 rounded-xl bg-amber-50 flex items-center justify-center">
@@ -77,7 +77,7 @@ export default function Dashboard() {
         </div>
 
         {/* Low Risk */}
-        <div className="card-hover bg-white border border-gray-200/80 rounded-2xl p-5">
+        <div className="card-hover bg-white border border-gray-100 rounded-2xl p-5 hover:border-emerald-200">
           <div className="flex items-center justify-between mb-4">
             <span className="text-[13px] font-semibold text-gray-500">Low Risk</span>
             <div className="w-9 h-9 rounded-xl bg-emerald-50 flex items-center justify-center">
@@ -92,11 +92,11 @@ export default function Dashboard() {
       </div>
 
       {/* Recent analyses */}
-      <div className="bg-white border border-gray-200/80 rounded-2xl overflow-hidden">
+      <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden">
         <div className="px-6 py-5 border-b border-gray-100 flex items-center justify-between">
           <div>
-            <h2 className="text-[17px] font-bold text-gray-900">Recent Analyses</h2>
-            <p className="text-[12px] text-gray-400 mt-0.5">Latest contract security scans</p>
+            <h2 className="text-[18px] font-bold text-gray-900">Recent Analyses</h2>
+            <p className="text-[12px] text-gray-400 mt-1">Latest contract security scans</p>
           </div>
           <Link
             to="/history"
