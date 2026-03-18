@@ -23,7 +23,7 @@ export default function History() {
         </p>
       </div>
 
-      <div className="bg-white border border-gray-200/80 rounded-2xl overflow-hidden">
+      <div className="border-0 overflow-hidden">
         {loading ? (
           <div className="flex items-center justify-center py-20">
             <div className="w-7 h-7 border-[3px] border-primary-200 border-t-primary-600 rounded-full animate-spin"></div>

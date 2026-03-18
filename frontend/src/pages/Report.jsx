@@ -27,7 +27,7 @@ function VulnerabilityCard({ vuln }) {
   };
 
   return (
-    <div className="bg-white border border-gray-200/80 rounded-2xl p-5 card-hover">
+    <div className="bg-gray-50 border border-gray-100 rounded-2xl p-5 card-hover">
       <div className="flex flex-wrap items-start gap-3 mb-3">
         <h3 className="text-[14px] font-bold text-gray-900 flex-1">{vuln.issue}</h3>
         <span className={`badge ${severityBadge[vuln.severity] || 'bg-gray-100 text-gray-600'}`}>
@@ -206,7 +206,7 @@ export default function Report() {
       {/* Chart + Health */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {/* Bar chart */}
-        <div className="bg-white border border-gray-200/80 rounded-2xl p-5">
+        <div className="bg-gray-50 border border-gray-100 rounded-2xl p-5">
           <h2 className="text-[15px] font-bold text-gray-900 mb-1">Severity Breakdown</h2>
           <p className="text-[12px] text-gray-400 mb-4">Distribution by severity level</p>
           <div className="h-[220px]">
@@ -235,7 +235,7 @@ export default function Report() {
         </div>
 
         {/* Health checklist */}
-        <div className="bg-white border border-gray-200/80 rounded-2xl p-5">
+        <div className="bg-gray-50 border border-gray-100 rounded-2xl p-5">
           <h2 className="text-[15px] font-bold text-gray-900 mb-1">Health Checklist</h2>
           <p className="text-[12px] text-gray-400 mb-4">
             {healthPassed}/{healthTotal} checks passed

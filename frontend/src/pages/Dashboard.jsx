@@ -92,7 +92,7 @@ export default function Dashboard() {
       </div>
 
       {/* Recent analyses */}
-      <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden">
+      <div className="border-0 overflow-hidden">
         <div className="px-6 py-5 border-b border-gray-100 flex items-center justify-between">
           <div>
             <h2 className="text-[18px] font-bold text-gray-900">Recent Analyses</h2>

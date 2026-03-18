@@ -2,21 +2,23 @@ import { NavLink } from 'react-router-dom';
 
 export default function Landing() {
   return (
-    <div className="min-h-screen bg-white flex flex-col">
-      {/* Navigation */}
-      <nav className="flex items-center justify-between px-6 lg:px-12 py-6 border-b border-gray-50">
-        <div className="flex items-center gap-3.5 animate-fade">
-          <div className="w-12 h-12 rounded-lg bg-primary-500 flex items-center justify-center hover:bg-primary-600 transition-colors">
-            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
-            </svg>
+    <div className="min-h-screen bg-[#e8eaed] py-6 lg:py-8 flex flex-col">
+      {/* Container */}
+      <div className="max-w-[1360px] mx-auto px-4 lg:px-8 w-full rounded-3xl bg-white shadow-lg flex flex-col flex-1">
+        {/* Navigation */}
+        <nav className="flex items-center justify-between px-6 lg:px-12 py-6 border-b border-gray-50">
+          <div className="flex items-center gap-4 animate-fade">
+            <div className="w-14 h-14 rounded-lg bg-primary-500 flex items-center justify-center hover:bg-primary-600 transition-colors active:scale-95">
+              <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
+              </svg>
+            </div>
+            <span className="text-[28px] font-bold text-gray-900 tracking-tight">SmartGuard</span>
           </div>
-          <span className="text-[24px] font-bold text-gray-900 tracking-tight">SmartGuard</span>
-        </div>
-      </nav>
+        </nav>
 
-      {/* Hero Section */}
-      <section className="flex-1 flex items-center justify-center px-6 lg:px-12 py-20">
+        {/* Hero Section */}
+        <section className="flex-1 flex items-center justify-center px-6 lg:px-12 py-20">
         <div className="max-w-2xl w-full text-center space-y-8">
           {/* Headline */}
           <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight animate-in">
@@ -59,8 +61,8 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="px-6 lg:px-12 py-20 bg-gray-50 border-t border-gray-100">
+        {/* Features Section */}
+        <section className="px-6 lg:px-12 py-20 bg-gray-50 border-t border-gray-100">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-16 animate-in">
             Why SmartGuard
@@ -102,21 +104,22 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Footer CTA */}
-      <section className="px-6 lg:px-12 py-16 bg-white border-t border-gray-100">
-        <div className="max-w-2xl mx-auto text-center space-y-6 animate-in" style={{ animationDelay: '0.4s' }}>
-          <h2 className="text-3xl font-bold text-gray-900">
-            Ready to secure your code?
-          </h2>
-          <p className="text-lg text-gray-600">Start your free analysis today and discover vulnerabilities before they become problems.</p>
-          <NavLink
-            to="/analyzer"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-primary-600 text-white font-semibold rounded-full hover:bg-primary-700 active:scale-95 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
-          >
-            Begin Analysis
-          </NavLink>
-        </div>
-      </section>
+        {/* Footer CTA */}
+        <section className="px-6 lg:px-12 py-16 border-t border-gray-100">
+          <div className="max-w-2xl mx-auto text-center space-y-6 animate-in" style={{ animationDelay: '0.4s' }}>
+            <h2 className="text-3xl font-bold text-gray-900">
+              Ready to secure your code?
+            </h2>
+            <p className="text-lg text-gray-600">Start your free analysis today and discover vulnerabilities before they become problems.</p>
+            <NavLink
+              to="/analyzer"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-primary-600 text-white font-semibold rounded-full hover:bg-primary-700 active:scale-95 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            >
+              Begin Analysis
+            </NavLink>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
