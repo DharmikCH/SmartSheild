@@ -26,8 +26,8 @@ export default function Dashboard() {
     <div className="space-y-7">
       {/* Page header */}
       <div>
-        <h1 className="text-[32px] font-bold text-gray-900 tracking-tight" style={{ fontFamily: "'Playfair Display', serif" }}>Dashboard</h1>
-        <p className="text-[13px] text-gray-500 mt-2">
+        <h1 className="text-[32px] font-bold text-white tracking-tight">Dashboard</h1>
+        <p className="text-[13px] text-gray-400 mt-2">
           Monitor your smart contract security posture at a glance.
         </p>
       </div>
@@ -35,7 +35,7 @@ export default function Dashboard() {
       {/* Stat cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Primary - Total Analyzed */}
-        <div className="card-hover bg-primary-600 rounded-2xl p-5 text-white border border-primary-500">
+        <div className="card-hover bg-primary-600 rounded-2xl p-5 text-white border border-primary-500 hover:border-primary-400">
           <div className="flex items-center justify-between mb-4">
             <span className="text-[13px] font-semibold text-white/85">Total Contracts</span>
             <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center">
@@ -49,54 +49,54 @@ export default function Dashboard() {
         </div>
 
         {/* High Risk */}
-        <div className="card-hover bg-white border border-gray-100 rounded-2xl p-5 hover:border-red-200">
+        <div className="card-hover bg-[#1a1f2e] border border-[#2a3142] rounded-2xl p-5 hover:border-red-600">
           <div className="flex items-center justify-between mb-4">
-            <span className="text-[13px] font-semibold text-gray-500">High Risk</span>
-            <div className="w-9 h-9 rounded-xl bg-red-50 flex items-center justify-center">
-              <svg className="w-[18px] h-[18px] text-danger" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <span className="text-[13px] font-semibold text-gray-400">High Risk</span>
+            <div className="w-9 h-9 rounded-xl bg-red-900/20 flex items-center justify-center">
+              <svg className="w-[18px] h-[18px] text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
               </svg>
             </div>
           </div>
-          <p className="text-[32px] font-extrabold text-gray-900 leading-none">{stats.high}</p>
-          <p className="text-[11px] text-gray-400 mt-1.5">Need immediate attention</p>
+          <p className="text-[32px] font-extrabold text-white leading-none">{stats.high}</p>
+          <p className="text-[11px] text-gray-500 mt-1.5">Need immediate attention</p>
         </div>
 
         {/* Medium Risk */}
-        <div className="card-hover bg-white border border-gray-100 rounded-2xl p-5 hover:border-amber-200">
+        <div className="card-hover bg-[#1a1f2e] border border-[#2a3142] rounded-2xl p-5 hover:border-amber-600">
           <div className="flex items-center justify-between mb-4">
-            <span className="text-[13px] font-semibold text-gray-500">Medium Risk</span>
-            <div className="w-9 h-9 rounded-xl bg-amber-50 flex items-center justify-center">
-              <svg className="w-[18px] h-[18px] text-warning" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <span className="text-[13px] font-semibold text-gray-400">Medium Risk</span>
+            <div className="w-9 h-9 rounded-xl bg-amber-900/20 flex items-center justify-center">
+              <svg className="w-[18px] h-[18px] text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
           </div>
-          <p className="text-[32px] font-extrabold text-gray-900 leading-none">{stats.medium}</p>
-          <p className="text-[11px] text-gray-400 mt-1.5">Should be reviewed</p>
+          <p className="text-[32px] font-extrabold text-white leading-none">{stats.medium}</p>
+          <p className="text-[11px] text-gray-500 mt-1.5">Should be reviewed</p>
         </div>
 
         {/* Low Risk */}
-        <div className="card-hover bg-white border border-gray-100 rounded-2xl p-5 hover:border-emerald-200">
+        <div className="card-hover bg-[#1a1f2e] border border-[#2a3142] rounded-2xl p-5 hover:border-emerald-600">
           <div className="flex items-center justify-between mb-4">
-            <span className="text-[13px] font-semibold text-gray-500">Low Risk</span>
-            <div className="w-9 h-9 rounded-xl bg-emerald-50 flex items-center justify-center">
-              <svg className="w-[18px] h-[18px] text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <span className="text-[13px] font-semibold text-gray-400">Low Risk</span>
+            <div className="w-9 h-9 rounded-xl bg-emerald-900/20 flex items-center justify-center">
+              <svg className="w-[18px] h-[18px] text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
           </div>
-          <p className="text-[32px] font-extrabold text-gray-900 leading-none">{stats.low}</p>
-          <p className="text-[11px] text-gray-400 mt-1.5">Looking good</p>
+          <p className="text-[32px] font-extrabold text-white leading-none">{stats.low}</p>
+          <p className="text-[11px] text-gray-500 mt-1.5">Looking good</p>
         </div>
       </div>
 
       {/* Recent analyses */}
-      <div className="border-0 overflow-hidden">
-        <div className="px-6 py-5 border-b border-gray-100 flex items-center justify-between">
+      <div className="border-0 overflow-hidden bg-[#1a1f2e] rounded-2xl">
+        <div className="px-6 py-5 border-b border-[#2a3142] flex items-center justify-between">
           <div>
-            <h2 className="text-[18px] font-bold text-gray-900">Recent Analyses</h2>
-            <p className="text-[12px] text-gray-400 mt-1">Latest contract security scans</p>
+            <h2 className="text-[18px] font-bold text-white">Recent Analyses</h2>
+            <p className="text-[12px] text-gray-500 mt-1">Latest contract security scans</p>
           </div>
           <Link
             to="/history"

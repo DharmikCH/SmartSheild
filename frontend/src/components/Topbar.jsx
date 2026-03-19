@@ -42,20 +42,9 @@ const navItems = [
 
 export default function Topbar({ onMenuToggle }) {
   return (
-    <header className="h-[68px] bg-white border-b-0 flex items-center justify-between px-6 lg:px-10 sticky top-0 z-30">
+    <header className="h-[68px] bg-[#1a1f2e] border-b border-[#2a3142] flex items-center justify-between px-6 lg:px-10 sticky top-0 z-30">
       {/* Left: Logo + Nav */}
       <div className="flex items-center gap-8">
-        {/* Mobile menu button */}
-        <button
-          onClick={onMenuToggle}
-          className="lg:hidden p-2 rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-50 transition-all"
-          id="menu-toggle"
-        >
-          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-
         {/* Logo - Clickable */}
         <Link to="/landing" className="flex items-center gap-2.5 cursor-pointer hover:opacity-80 transition-opacity">
           <div className="w-8 h-8 rounded-lg bg-primary-500 flex items-center justify-center hover:bg-primary-600 transition-colors">
@@ -63,7 +52,7 @@ export default function Topbar({ onMenuToggle }) {
               <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
             </svg>
           </div>
-          <span className="text-[18px] font-bold text-gray-900 tracking-tight hidden sm:block">SmartGuard</span>
+          <span className="text-[18px] font-bold text-white tracking-tight hidden sm:block">SmartGuard</span>
         </Link>
 
         {/* Navigation */}
@@ -77,8 +66,8 @@ export default function Topbar({ onMenuToggle }) {
                 `flex items-center gap-2 px-3.5 py-2 rounded-lg text-[13px] font-medium transition-all duration-200
                 ${
                   isActive
-                    ? 'bg-primary-50 text-primary-600'
-                    : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                    ? 'bg-[#2a3142] text-primary-400'
+                    : 'text-gray-400 hover:text-gray-300 hover:bg-[#252d3a]'
                 }`
               }
             >
