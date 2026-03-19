@@ -17,26 +17,26 @@ export default function History() {
     <div className="space-y-6">
       {/* Page header */}
       <div>
-        <h1 className="text-[26px] font-bold text-gray-900 tracking-tight">Analysis History</h1>
-        <p className="text-[13px] text-gray-500 mt-1">
+        <h1 className="text-[26px] font-bold text-white tracking-tight">Analysis History</h1>
+        <p className="text-[13px] text-gray-400 mt-1">
           Review all previously analyzed smart contracts.
         </p>
       </div>
 
-      <div className="border-0 overflow-hidden">
+      <div className="border-0 overflow-hidden bg-[#1a1f2e] rounded-2xl">
         {loading ? (
           <div className="flex items-center justify-center py-20">
-            <div className="w-7 h-7 border-[3px] border-primary-200 border-t-primary-600 rounded-full animate-spin"></div>
+            <div className="w-7 h-7 border-[3px] border-primary-900 border-t-primary-500 rounded-full animate-spin"></div>
           </div>
         ) : reports.length === 0 ? (
           <div className="text-center py-20">
-            <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gray-50 flex items-center justify-center">
-              <svg className="w-8 h-8 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-[#252d3a] flex items-center justify-center">
+              <svg className="w-8 h-8 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h3 className="text-[15px] font-bold text-gray-900 mb-1">No contracts analyzed yet</h3>
-            <p className="text-[13px] text-gray-400 mb-5">
+            <h3 className="text-[15px] font-bold text-white mb-1">No contracts analyzed yet</h3>
+            <p className="text-[13px] text-gray-500 mb-5">
               Start by scanning your first smart contract for vulnerabilities
             </p>
             <Link

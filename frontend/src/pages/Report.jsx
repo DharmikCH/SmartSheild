@@ -12,35 +12,35 @@ const riskLevelColors = {
 };
 
 const riskLevelBg = {
-  High: 'bg-red-50 border-red-200/80',
-  Medium: 'bg-amber-50 border-amber-200/80',
-  Low: 'bg-emerald-50 border-emerald-200/80',
+  High: 'bg-red-900/20 border-red-800/40',
+  Medium: 'bg-amber-900/20 border-amber-800/40',
+  Low: 'bg-emerald-900/20 border-emerald-800/40',
 };
 
 function VulnerabilityCard({ vuln }) {
   const [expanded, setExpanded] = useState(false);
 
   const severityBadge = {
-    Critical: 'bg-red-100 text-red-700',
-    High: 'bg-orange-100 text-orange-700',
-    Medium: 'bg-amber-100 text-amber-700',
+    Critical: 'bg-red-900/40 text-red-300',
+    High: 'bg-orange-900/40 text-orange-300',
+    Medium: 'bg-amber-900/40 text-amber-300',
   };
 
   return (
-    <div className="bg-gray-50 border border-gray-100 rounded-2xl p-5 card-hover">
+    <div className="bg-[#1a1f2e] border border-[#2a3142] rounded-2xl p-5 card-hover">
       <div className="flex flex-wrap items-start gap-3 mb-3">
-        <h3 className="text-[14px] font-bold text-gray-900 flex-1">{vuln.issue}</h3>
-        <span className={`badge ${severityBadge[vuln.severity] || 'bg-gray-100 text-gray-600'}`}>
+        <h3 className="text-[14px] font-bold text-white flex-1">{vuln.issue}</h3>
+        <span className={`badge ${severityBadge[vuln.severity] || 'bg-[#252d3a] text-gray-400'}`}>
           {vuln.severity}
         </span>
         {vuln.lineNumber && (
-          <span className="px-2.5 py-0.5 bg-gray-100 text-gray-500 text-[11px] font-semibold rounded-lg">
+          <span className="px-2.5 py-0.5 bg-[#252d3a] text-gray-500 text-[11px] font-semibold rounded-lg">
             Line {vuln.lineNumber}
           </span>
         )}
       </div>
 
-      <p className="text-[13px] text-gray-500 leading-relaxed mb-4">{vuln.description}</p>
+      <p className="text-[13px] text-gray-400 leading-relaxed mb-4">{vuln.description}</p>
 
       <button
         onClick={() => setExpanded(!expanded)}
@@ -163,8 +163,8 @@ export default function Report() {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-[26px] font-bold text-gray-900 tracking-tight">{report.name}</h1>
-        <p className="text-[13px] text-gray-400 mt-1">
+        <h1 className="text-[26px] font-bold text-white tracking-tight">{report.name}</h1>
+        <p className="text-[13px] text-gray-500 mt-1">
           Analyzed on {new Date(report.analyzedAt).toLocaleDateString('en-US', {
             month: 'long',
             day: 'numeric',
@@ -177,16 +177,16 @@ export default function Report() {
 
       {/* Stat cards */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className={`card-hover border rounded-2xl p-5 ${riskLevelBg[report.riskLevel]}`}>
-          <span className="text-[13px] font-semibold text-gray-500">Risk Score</span>
+        <div className={`card-hover border rounded-2xl p-5 bg-[#1a1f2e] border-[#2a3142] ${riskLevelBg[report.riskLevel]}`}>
+          <span className="text-[13px] font-semibold text-gray-400">Risk Score</span>
           <p className={`text-[36px] font-extrabold mt-1 leading-none ${riskLevelColors[report.riskLevel]}`}>
             {report.riskScore}
           </p>
-          <p className="text-[11px] text-gray-400 mt-1.5">out of 100</p>
+          <p className="text-[11px] text-gray-500 mt-1.5">out of 100</p>
         </div>
 
-        <div className="card-hover bg-white border border-gray-200/80 rounded-2xl p-5">
-          <span className="text-[13px] font-semibold text-gray-500">Risk Level</span>
+        <div className="card-hover bg-[#1a1f2e] border border-[#2a3142] rounded-2xl p-5">
+          <span className="text-[13px] font-semibold text-gray-400">Risk Level</span>
           <div className="mt-3">
             <span className={`badge badge-${report.riskLevel.toLowerCase()} text-[14px] px-4 py-1.5`}>
               {report.riskLevel}
@@ -194,21 +194,21 @@ export default function Report() {
           </div>
         </div>
 
-        <div className="card-hover bg-white border border-gray-200/80 rounded-2xl p-5">
-          <span className="text-[13px] font-semibold text-gray-500">Vulnerabilities</span>
-          <p className="text-[36px] font-extrabold text-gray-900 mt-1 leading-none">
+        <div className="card-hover bg-[#1a1f2e] border border-[#2a3142] rounded-2xl p-5">
+          <span className="text-[13px] font-semibold text-gray-400">Vulnerabilities</span>
+          <p className="text-[36px] font-extrabold text-white mt-1 leading-none">
             {report.vulnerabilities?.length || 0}
           </p>
-          <p className="text-[11px] text-gray-400 mt-1.5">issues detected</p>
+          <p className="text-[11px] text-gray-500 mt-1.5">issues detected</p>
         </div>
       </div>
 
       {/* Chart + Health */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {/* Bar chart */}
-        <div className="bg-gray-50 border border-gray-100 rounded-2xl p-5">
-          <h2 className="text-[15px] font-bold text-gray-900 mb-1">Severity Breakdown</h2>
-          <p className="text-[12px] text-gray-400 mb-4">Distribution by severity level</p>
+        <div className="bg-[#1a1f2e] border border-[#2a3142] rounded-2xl p-5">
+          <h2 className="text-[15px] font-bold text-white mb-1">Severity Breakdown</h2>
+          <p className="text-[12px] text-gray-500 mb-4">Distribution by severity level</p>
           <div className="h-[220px]">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={chartData} barCategoryGap="30%">
@@ -235,9 +235,9 @@ export default function Report() {
         </div>
 
         {/* Health checklist */}
-        <div className="bg-gray-50 border border-gray-100 rounded-2xl p-5">
-          <h2 className="text-[15px] font-bold text-gray-900 mb-1">Health Checklist</h2>
-          <p className="text-[12px] text-gray-400 mb-4">
+        <div className="bg-[#1a1f2e] border border-[#2a3142] rounded-2xl p-5">
+          <h2 className="text-[15px] font-bold text-white mb-1">Health Checklist</h2>
+          <p className="text-[12px] text-gray-500 mb-4">
             {healthPassed}/{healthTotal} checks passed
           </p>
 

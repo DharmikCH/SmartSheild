@@ -95,8 +95,8 @@ export default function Analyzer() {
     <div className="max-w-[820px] mx-auto space-y-6">
       {/* Page header */}
       <div>
-        <h1 className="text-[26px] font-bold text-gray-900 tracking-tight">Smart Contract Analyzer</h1>
-        <p className="text-[13px] text-gray-500 mt-1">
+        <h1 className="text-[26px] font-bold text-white tracking-tight">Security Analyzer</h1>
+        <p className="text-[13px] text-gray-400 mt-1">
           Paste or upload your Solidity code to scan for security vulnerabilities.
         </p>
       </div>
@@ -105,9 +105,9 @@ export default function Analyzer() {
       <div className="border-0 rounded-0 p-0 space-y-5">
         {/* Contract name */}
         <div>
-          <label className="block text-[13px] font-semibold text-gray-700 mb-1.5" htmlFor="contract-name">
+          <label className="block text-[13px] font-semibold text-white mb-1.5" htmlFor="contract-name">
             Contract Name
-            <span className="text-gray-400 font-normal ml-1">(optional)</span>
+            <span className="text-gray-500 font-normal ml-1">(optional)</span>
           </label>
           <input
             id="contract-name"
@@ -115,13 +115,13 @@ export default function Analyzer() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="e.g., MyToken, VaultContract"
-            className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-[13px] text-gray-700 placeholder-gray-400 outline-none focus:bg-white focus:ring-2 focus:ring-primary-500/20 focus:border-primary-400 transition-all"
+            className="w-full px-4 py-2.5 bg-[#1a1f2e] border border-[#2a3142] rounded-xl text-[13px] text-white placeholder-gray-500 outline-none focus:bg-[#252d3a] focus:ring-2 focus:ring-primary-500/20 focus:border-primary-400 transition-all"
           />
         </div>
 
         {/* Code textarea */}
         <div>
-          <label className="block text-[13px] font-semibold text-gray-700 mb-1.5" htmlFor="contract-code">
+          <label className="block text-[13px] font-semibold text-white mb-1.5" htmlFor="contract-code">
             Solidity Source Code
           </label>
           <textarea
@@ -130,14 +130,14 @@ export default function Analyzer() {
             onChange={(e) => setCode(e.target.value)}
             placeholder="// Paste your Solidity smart contract code here..."
             rows={16}
-            className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-[13px] text-gray-800 placeholder-gray-400 font-mono outline-none focus:bg-white focus:ring-2 focus:ring-primary-500/20 focus:border-primary-400 transition-all resize-y leading-relaxed"
+            className="w-full px-4 py-3 bg-[#1a1f2e] border border-[#2a3142] rounded-xl text-[13px] text-white placeholder-gray-500 font-mono outline-none focus:bg-[#252d3a] focus:ring-2 focus:ring-primary-500/20 focus:border-primary-400 transition-all resize-y leading-relaxed"
             spellCheck={false}
           />
         </div>
 
         {/* Actions */}
         <div className="flex flex-wrap items-center gap-3">
-          <label className="inline-flex items-center gap-2 px-4 py-2.5 bg-white border border-gray-200 text-gray-600 text-[13px] font-medium rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+          <label className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#1a1f2e] border border-[#2a3142] text-gray-300 text-[13px] font-medium rounded-xl hover:bg-[#252d3a] cursor-pointer transition-colors">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
             </svg>
