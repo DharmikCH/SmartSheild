@@ -61,8 +61,8 @@ function VulnerabilityCard({ vuln }) {
 
       {expanded && (
         <div className="mt-4 space-y-4">
-          <div className="p-3.5 bg-blue-50 border border-blue-200/80 rounded-xl">
-            <p className="text-[13px] text-blue-800">
+          <div className="p-3.5 bg-blue-900/20 border border-blue-800/40 rounded-xl">
+            <p className="text-[13px] text-blue-300">
               <span className="font-bold">Recommendation:</span> {vuln.fix}
             </p>
           </div>
@@ -71,9 +71,9 @@ function VulnerabilityCard({ vuln }) {
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-2 h-2 bg-danger rounded-full"></div>
-                <span className="text-[11px] font-bold text-red-600 uppercase tracking-wider">Unsafe Code</span>
+                <span className="text-[11px] font-bold text-red-400 uppercase tracking-wider">Unsafe Code</span>
               </div>
-              <div className="border-2 border-red-200 rounded-xl overflow-hidden">
+              <div className="border-2 border-red-800/40 rounded-xl overflow-hidden">
                 <SyntaxHighlighter
                   language="solidity"
                   style={oneDark}
@@ -88,9 +88,9 @@ function VulnerabilityCard({ vuln }) {
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-2 h-2 bg-success rounded-full"></div>
-                <span className="text-[11px] font-bold text-green-600 uppercase tracking-wider">Safe Code</span>
+                <span className="text-[11px] font-bold text-green-400 uppercase tracking-wider">Safe Code</span>
               </div>
-              <div className="border-2 border-green-200 rounded-xl overflow-hidden">
+              <div className="border-2 border-green-800/40 rounded-xl overflow-hidden">
                 <SyntaxHighlighter
                   language="solidity"
                   style={oneDark}
@@ -134,11 +134,11 @@ export default function Report() {
 
   if (error) {
     return (
-      <div className="max-w-md mx-auto mt-20 p-6 bg-red-50 border border-red-200 rounded-2xl text-center">
+      <div className="max-w-md mx-auto mt-20 p-6 bg-red-900/20 border border-red-800/40 rounded-2xl text-center">
         <svg className="w-10 h-10 text-danger mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
         </svg>
-        <p className="text-[13px] text-red-700 font-medium">{error}</p>
+        <p className="text-[13px] text-red-300 font-medium">{error}</p>
         <Link to="/analyzer" className="inline-block mt-4 text-[13px] text-primary-600 font-semibold hover:underline">
           ← Back to Analyzer
         </Link>
@@ -212,16 +212,18 @@ export default function Report() {
           <div className="h-[220px]">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={chartData} barCategoryGap="30%">
-                <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
-                <XAxis dataKey="name" tick={{ fontSize: 11, fill: '#9ca3af', fontFamily: 'Plus Jakarta Sans' }} axisLine={{ stroke: '#e5e7eb' }} />
-                <YAxis allowDecimals={false} tick={{ fontSize: 11, fill: '#9ca3af' }} axisLine={{ stroke: '#e5e7eb' }} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#2a3142" />
+                <XAxis dataKey="name" tick={{ fontSize: 11, fill: '#9ca3af', fontFamily: 'Plus Jakarta Sans' }} axisLine={{ stroke: '#2a3142' }} />
+                <YAxis allowDecimals={false} tick={{ fontSize: 11, fill: '#9ca3af' }} axisLine={{ stroke: '#2a3142' }} />
                 <Tooltip
                   contentStyle={{
                     borderRadius: '12px',
-                    border: '1px solid #e5e7eb',
+                    border: '1px solid #2a3142',
+                    backgroundColor: '#1a1f2e',
+                    color: '#fff',
                     fontSize: '12px',
                     fontFamily: 'Plus Jakarta Sans',
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
                   }}
                 />
                 <Bar dataKey="count" radius={[8, 8, 0, 0]} maxBarSize={50}>
@@ -241,7 +243,7 @@ export default function Report() {
             {healthPassed}/{healthTotal} checks passed
           </p>
 
-          <div className="w-full h-1.5 bg-gray-100 rounded-full mb-5 overflow-hidden">
+          <div className="w-full h-1.5 bg-[#252d3a] rounded-full mb-5 overflow-hidden">
             <div
               className="h-full rounded-full transition-all duration-500"
               style={{
@@ -261,8 +263,8 @@ export default function Report() {
                 key={index}
                 className={`flex items-center gap-3 p-3 rounded-xl border transition-colors ${
                   item.passed
-                    ? 'bg-emerald-50/50 border-emerald-200/60'
-                    : 'bg-red-50/50 border-red-200/60'
+                    ? 'bg-emerald-900/20 border-emerald-800/40'
+                    : 'bg-red-900/20 border-red-800/40'
                 }`}
               >
                 {item.passed ? (
@@ -274,7 +276,7 @@ export default function Report() {
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                   </svg>
                 )}
-                <span className="text-[13px] text-gray-700">{item.check}</span>
+                <span className="text-[13px] text-gray-300">{item.check}</span>
               </div>
             ))}
           </div>
@@ -285,7 +287,7 @@ export default function Report() {
       {report.vulnerabilities?.length > 0 && (
         <div className="space-y-4">
           <div>
-            <h2 className="text-[17px] font-bold text-gray-900">Detected Vulnerabilities</h2>
+            <h2 className="text-[17px] font-bold text-white">Detected Vulnerabilities</h2>
             <p className="text-[12px] text-gray-400 mt-0.5">
               Click "View Fix" to see recommended solutions with code examples
             </p>
@@ -311,7 +313,7 @@ export default function Report() {
         </Link>
         <Link
           to="/history"
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 text-gray-600 text-[13px] font-medium rounded-xl hover:bg-gray-50 transition-colors"
+          className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1a1f2e] border border-[#2a3142] text-gray-300 text-[13px] font-medium rounded-xl hover:bg-[#252d3a] transition-colors"
           id="view-all-reports-btn"
         >
           View All Reports

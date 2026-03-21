@@ -3,7 +3,7 @@ import { NavLink, Link } from 'react-router-dom';
 const navItems = [
   {
     label: 'Dashboard',
-    path: '/',
+    path: '/dashboard',
     icon: (
       <svg className="w-[18px] h-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
@@ -46,7 +46,7 @@ export default function Topbar({ onMenuToggle }) {
       {/* Left: Logo + Nav */}
       <div className="flex items-center gap-8">
         {/* Logo - Clickable */}
-        <Link to="/landing" className="flex items-center gap-2.5 cursor-pointer hover:opacity-80 transition-opacity">
+        <Link to="/" className="flex items-center gap-2.5 cursor-pointer hover:opacity-80 transition-opacity">
           <div className="w-8 h-8 rounded-lg bg-primary-500 flex items-center justify-center hover:bg-primary-600 transition-colors">
             <svg className="w-[18px] h-[18px] text-white" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
@@ -61,7 +61,7 @@ export default function Topbar({ onMenuToggle }) {
             <NavLink
               key={item.path}
               to={item.path}
-              end={item.path === '/'}
+              end={item.path === '/dashboard'}
               className={({ isActive }) =>
                 `flex items-center gap-2 px-3.5 py-2 rounded-lg text-[13px] font-medium transition-all duration-200
                 ${

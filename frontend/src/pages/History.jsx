@@ -54,7 +54,7 @@ export default function History() {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="text-left text-[11px] font-semibold text-gray-400 uppercase tracking-wider bg-gray-50/60">
+                <tr className="text-left text-[11px] font-semibold text-gray-400 uppercase tracking-wider bg-[#252d3a]/60">
                   <th className="px-6 py-3">#</th>
                   <th className="px-6 py-3">Contract Name</th>
                   <th className="px-6 py-3">Risk Score</th>
@@ -63,13 +63,13 @@ export default function History() {
                   <th className="px-6 py-3">Action</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-50">
+              <tbody className="divide-y divide-[#2a3142]">
                 {reports.map((report, index) => (
-                  <tr key={report.id} className="hover:bg-gray-50/50 transition-colors">
+                  <tr key={report.id} className="hover:bg-[#252d3a]/50 transition-colors">
                     <td className="px-6 py-3.5 text-[13px] text-gray-400 font-mono">
                       {index + 1}
                     </td>
-                    <td className="px-6 py-3.5 text-[13px] font-semibold text-gray-900">
+                    <td className="px-6 py-3.5 text-[13px] font-semibold text-white">
                       {report.name}
                     </td>
                     <td className="px-6 py-3.5 text-[13px] text-gray-600 font-bold tabular-nums">
@@ -92,7 +92,7 @@ export default function History() {
                     <td className="px-6 py-3.5">
                       <Link
                         to={`/report/${report.id}`}
-                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-primary-50 text-primary-700 text-[12px] font-semibold rounded-lg hover:bg-primary-100 transition-colors"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-primary-900/30 text-primary-400 text-[12px] font-semibold rounded-lg hover:bg-primary-800/40 transition-colors"
                       >
                         View Report
                         <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

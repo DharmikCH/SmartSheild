@@ -158,14 +158,14 @@ button:active, [role="button"]:active, a.inline-flex:active {
   letter-spacing: 0.01em;
 }
 .badge-low {
-  background-color: #dcfce7;
-  color: #166534;
+  background-color: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
 }
 .badge-medium {
-  background-color: #fef3c7;
-  color: #92400e;
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
 }
 .badge-high {
-  background-color: #fee2e2;
-  color: #991b1b;
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
 }
