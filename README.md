@@ -24,16 +24,16 @@ Each detected issue includes the affected line number, an explanation, and side-
 
 ```
 ┌──────────────┐      POST /api/analyze/      ┌──────────────────┐
-│              │  ──────────────────────────>  │                  │
-│   React UI   │                              │  Django Backend   │
-│   (Vite)     │  <──────────────────────────  │                  │
-│              │      JSON report              │  ┌────────────┐  │
-└──────────────┘                              │  │  Analysis   │  │
-                                              │  │  Engine     │  │
-                                              │  │  (regex)    │  │
+│              │  ──────────────────────────> │                  │
+│   React UI   │                              │  Django Backend  │
+│   (Vite)     │  <────────────────────────── │                  │
+│              │      JSON report             │  ┌────────────┐  │
+└──────────────┘                              │  │  Analysis  │  │
+                                              │  │  Engine    │  │
+                                              │  │  (regex)   │  │
                                               │  └────────────┘  │
                                               │  ┌────────────┐  │
-                                              │  │  SQLite DB  │  │
+                                              │  │  SQLite DB │  │
                                               │  └────────────┘  │
                                               └──────────────────┘
 ```
